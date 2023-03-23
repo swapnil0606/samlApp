@@ -43,7 +43,7 @@ app.get('/login/saml', async (request, response, next) => {
   console.log("URL :", URL);
   response.redirect(URL)
 })
-
+console.log("commit 5")
 app.post('/login/saml/callback', async (request, response, next) => {
   const { profile } = await saml.validatePostResponse(request.body);
   response.send(`Hello ${profile.nameID}!`);
