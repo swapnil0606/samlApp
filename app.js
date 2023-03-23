@@ -48,7 +48,7 @@ app.post('/login/saml/callback', async (request, response, next) => {
   const { profile } = await saml.validatePostResponse(request.body);
   response.send(`Hello ${profile.nameID}!`);
 })
-
+console.log("commit 3")
 // app.listen(3000)
 
 app.listen(port, function () {
