@@ -16,6 +16,8 @@ const AWS = require('aws-sdk');
  */
 
 
+console.log("commit 1")
+
 const check = fs.readFileSync('certs/public.pem', 'utf-8');
 const check1 = fs.readFileSync('certs/private.pem', 'utf-8');
 
@@ -31,7 +33,7 @@ const saml = new SAML({
 console.log("saml: ", saml);
 
 const app = express();
-
+console.log("commit 2")
 var port = 8082;
 
 app.use(express.urlencoded({ extended: false }))
@@ -46,7 +48,7 @@ app.post('/login/saml/callback', async (request, response, next) => {
   const { profile } = await saml.validatePostResponse(request.body);
   response.send(`Hello ${profile.nameID}!`);
 })
-
+console.log("commit 3")
 // app.listen(3000)
 
 app.listen(port, function () {
