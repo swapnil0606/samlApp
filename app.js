@@ -16,6 +16,8 @@ const AWS = require('aws-sdk');
  */
 
 
+console.log("commit 1")
+
 const check = fs.readFileSync('certs/public.pem', 'utf-8');
 const check1 = fs.readFileSync('certs/private.pem', 'utf-8');
 
